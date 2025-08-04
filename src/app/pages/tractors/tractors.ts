@@ -8,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class Tractors {
 
+  ngOnInit() {
+  this.getTractors();
+  }
+  
+  getTractors(){
+    console.log("test");   
+    
+  }
 }
