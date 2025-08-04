@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Tractor } from '../../core/services/tractor';
 
 @Component({
   selector: 'app-tractors',
@@ -8,12 +9,17 @@ import { Component } from '@angular/core';
 })
 export class Tractors {
 
+  constructor(private tractorApi:Tractor){
+
+  }
   ngOnInit() {
   this.getTractors();
   }
   
   getTractors(){
-    console.log("test");   
-    
+  this.tractorApi.getAll().subscribe({
+      next: (res:any) => console.log('Tractors22:', res),
+      error: (err:any) => console.error('Error222:', err)
+    });
   }
 }
