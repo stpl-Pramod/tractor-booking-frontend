@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Tractor } from '../../core/services/tractor';
 import {MatTableModule} from '@angular/material/table';
+import { NgClass } from '@angular/common';
 
 // export interface PeriodicElement {
 //   name: string;
@@ -13,12 +14,12 @@ import {MatTableModule} from '@angular/material/table';
 
 @Component({
   selector: 'app-tractors',
-  imports: [MatTableModule],
+  imports: [MatTableModule, NgClass],
   templateUrl: './tractors.html',
   styleUrl: './tractors.scss'
 })
 export class Tractors {
-  displayedColumns: string[] = ['tractor_id', 'owner_id', 'brand', 'model', 'year', 'location', 'price_per_day', 'status'];
+  displayedColumns: string[] = ['tractor_id', 'owner', 'brand', 'model', 'year', 'location', 'price_per_day', 'status'];
   dataSource :any;
 
   constructor(private tractorApi:Tractor){
