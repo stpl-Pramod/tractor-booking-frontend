@@ -32,10 +32,10 @@ export class Tractors {
   getTractors(){
   this.tractorApi.getAll().subscribe({
       next: (res:any) => {
-        console.log('Tractors22:', res);
+        console.log('Tractors response :', res);
         this.dataSource = res;
       },
-      error: (err:any) => console.error('Error222:', err)
+      error: (err:any) => console.error('Error response:', err)
     });
   }
 }
