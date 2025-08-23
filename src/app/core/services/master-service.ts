@@ -14,4 +14,7 @@ export class MasterService {
   getBookings(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseApiUrl}/bookings`);
   }
+  addBooking(bookingData: any) {
+  return this.http.post<any>(this.baseApiUrl, bookingData);
+}
 }

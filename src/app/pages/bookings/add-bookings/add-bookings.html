@@ -1,0 +1,49 @@
+<!-- <p>add-bookings works!</p> -->
+<h2 mat-dialog-title>Add Booking</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="bookingForm" class="d-flex flex-column gap-3">
+
+    <mat-form-field appearance="fill">
+      <mat-label>Tractor ID</mat-label>
+      <input matInput formControlName="tractor_id" type="number">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>User ID</mat-label>
+      <input matInput formControlName="user_id" type="number">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Booking Date</mat-label>
+      <input matInput formControlName="booking_date" type="datetime-local">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Start Date</mat-label>
+      <input matInput formControlName="start_date" type="datetime-local">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>End Date</mat-label>
+      <input matInput formControlName="end_date" type="datetime-local">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Booking Method</mat-label>
+      <mat-select formControlName="booking_method">
+        <mat-option value="web_portal">Web Portal</mat-option>
+        <mat-option value="whatsapp">WhatsApp</mat-option>
+        <mat-option value="phone_call">Phone Call</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onSave()" [disabled]="bookingForm.invalid">
+    Save
+  </button>
+</mat-dialog-actions>

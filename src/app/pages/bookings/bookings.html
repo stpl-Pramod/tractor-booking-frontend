@@ -1,4 +1,12 @@
 <!-- <p>bookings works!</p> -->
+ <div class="mb-3">
+  <button mat-raised-button color="primary" (click)="openAddBookingDialog()">
+    + Add Booking
+  </button>
+</div>
+
+<!-- Existing table here -->
+
 <div class="container">
   <table mat-table [dataSource]="dataSource" class="mat-table">
 
